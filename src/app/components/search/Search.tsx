@@ -1,21 +1,22 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import { Box, TextField, Button } from '@mui/material';
 
 export default function Search() {
   return (
-    <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
+    <Box style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        width: '95%',
+        marginBottom: '3rem'
       }}
+      component="form"
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" label="Commitment" variant="outlined" />
-      <TextField id="outlined-basic" label="Site" variant="outlined" />
-      <Button variant="outlined">Search</Button>
+      <TextField sx={{ width: '40%' }} id="outlined-basic" placeholder='Title, Company, Salary' variant="outlined" />
+      <TextField sx={{ width: '40%' }} id="outlined-basic" placeholder="Location" variant="outlined" />
+      <Button sx={{ width: '15%' }} variant="outlined">Search</Button>
     </Box>
   );
 };

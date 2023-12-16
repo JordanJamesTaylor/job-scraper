@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Search from './components/search/Search';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import theme from './theme';
+
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,10 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Search />
-        {children}
-      </body>
+      <ThemeProvider theme={theme}>
+        <body className={inter.className}>
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 };

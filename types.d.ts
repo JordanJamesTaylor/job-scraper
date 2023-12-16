@@ -1,4 +1,5 @@
-type Jobs = {
+type Job = {
+    id: number,
     title: string,
     datePosted: string,
     salary: string,
